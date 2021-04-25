@@ -16,10 +16,11 @@
 
 ### Run the Jar file
 
-`hadoop jar countRecs.jar CountRecs NYC_Jobs.csv /user/zw1718/project/output`
+`hadoop jar countRecs.jar CountRecs /user/zw1718/project/input/NYC_Jobs.csv /user/zw1718/project/output`
 
 ### See the output file
-`hdfs dfs -cat project/output/part-m-00000`
+`hdfs dfs -cat project/output/part-r-00000`
 
-### remove the output file (for later MapReduce output if needed)
-`hdfs dfs -rm project/output/part-m-00000`
+### remove file and directory (for later MapReduce output if needed)
+`hdfs dfs -rm project/output/part-r-00000`
+`hdfs dfs -rm -r -f project/output`

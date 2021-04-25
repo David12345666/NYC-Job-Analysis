@@ -14,7 +14,7 @@
 
 ### Run the Jar file
 
-`hadoop jar countRecs.jar CountRecs /user/zw1718/project/input/NYC_Jobs.csv /user/zw1718/project/output`
+`hadoop jar clean.jar Clean /user/zw1718/project/input/NYC_Jobs.csv /user/zw1718/project/output`
 
 
 ### See the output file
