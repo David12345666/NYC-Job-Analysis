@@ -12,7 +12,7 @@
 
 ### Put csv files into input directory in HDFS
 
-`hdfs dfs -put Occupation.csv hw/input`
+`hdfs dfs -put Occupations.csv hw/input`
 
 ## Data Cleaning Job 2
 

@@ -14,20 +14,18 @@
 
 ### Create Jar file
 
-`jar -cvf maxTemp.jar *.class`
+`jar -cvf clean1.jar *.class`
 
 
 ### Run the Jar file
 
-`hadoop jar maxTemp.jar Clean /user/sw4017/hw/input/Occupation.csv /user/sw4017/hw/output/`
-
-(Change file path)
+`hadoop jar clean1.jar Clean /user/sw4017/hw/input/Occupations.csv /user/sw4017/hw/output/`
 
 ### Put output into new csv file
 
 `hdfs dfs -getmerge hw/output/ Cleaned1.csv`
 
-### download file to local computer and convert the cleaned  data into csv format (type command in local computer terminal)
+### Download file to local computer and convert the cleaned  data into csv format (type command in local computer terminal)
 
 `scp sw4017@peel.hpc.nyu.edu:/home/sw4017/Cleaned1.csv C:\Users\sirui\Desktop` 
 
@@ -65,21 +63,18 @@
 
 ### Create Jar file
 
-`jar -cvf maxTemp.jar *.class`
+`jar -cvf clean2.jar *.class`
 
 
 ### Run the Jar file
 
-`hadoop jar maxTemp.jar Clean2 /user/sw4017/hw/input/Paid.csv /user/sw4017/hw/output/`
-
-(Change file path)
-
+`hadoop jar clean2.jar Clean2 /user/sw4017/hw/input/Paid.csv /user/sw4017/hw/output/`
 
 ### Put output into new csv file
 
 `hdfs dfs -getmerge hw/output/ Cleaned2.csv`
 
-### download file to local computer and convert the cleaned  data into csv format (type command in local computer terminal)
+### Download file to local computer and convert the cleaned  data into csv format (type command in local computer terminal)
 
 `scp sw4017@peel.hpc.nyu.edu:/home/sw4017/Cleaned2.csv C:\Users\sirui\Desktop` 
 
