@@ -16,13 +16,13 @@
 
 ### Run the Jar file
 
-`1`
+`hadoop jar maxTemp.jar CountRecs /user/sw4017/hw/input/Cleaned2.csv /user/sw4017/hw/output/`
 
 ### Put output into new csv file
-`1`
-### See the output
-`1`
 
-### remove file and directory (for later MapReduce output if needed)
-`hdfs dfs -rm project/output/part-r-00000`
-`hdfs dfs -rm -r -f project/output`
+`hdfs dfs -getmerge hw/output/ homework_ans.txt`
+
+### See the output
+
+`cat homework_ans.txt`
+

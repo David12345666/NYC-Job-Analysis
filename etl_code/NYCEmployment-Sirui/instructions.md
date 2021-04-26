@@ -1,11 +1,7 @@
-## First Dataset Data Cleaning
-
-### Make directory of input and output
-`??`
-### Put input file into the input directory
-`??`
+## Data Cleaning Job 1
 
 ### Compile Java souce code
+
 `java -version`
 
 `yarn classpath`
@@ -23,32 +19,40 @@
 
 ### Run the Jar file
 
-`1`
+`hadoop jar maxTemp.jar Clean /user/sw4017/hw/input/Occupation.csv /user/sw4017/hw/output/`
 
+(Change file path)
 
 ### Put output into new csv file
-`1`
+
+`hdfs dfs -getmerge hw/output/ Cleaned1.csv`
 
 ### download file to local computer and convert the cleaned  data into csv format (type command in local computer terminal)
-`scp  zw1718@peel.hpc.nyu.edu:/home/zw1718/part-m-00000  <~/Documents/>`(where ever you want to put it in your local computer)
+
+`scp sw4017@peel.hpc.nyu.edu:/home/sw4017/Cleaned1.csv C:\Users\sirui\Desktop` 
+
+(Change file path)
 
 ### Upload the cleaned data to HDFS
-`hdfs dfs -put Cleaned_data.csv project/input`
+
+`hdfs dfs -mkdir NYCEmployment`
+
+`hdfs dfs -put Cleaned1.csv NYCEmployment`
 
 
 
-## Second Dataset Data Cleaning
+## Data Cleaning Job 2
 
-### Remove class, jar, input and output directory from last Data Cleaning Job
-`??`
+### Delete jar, class files and output from last data cleaning job
 
-### Make directory of input and output
-`??`
+`rm *.class`
 
-### Put input file into the input directory
-`??`
+`rm *.jar`
+
+`hdfs dfs -rm -r -f hw/output`
 
 ### Compile Java souce code
+
 `java -version`
 
 `yarn classpath`
@@ -66,17 +70,23 @@
 
 ### Run the Jar file
 
-`1`
+`hadoop jar maxTemp.jar Clean2 /user/sw4017/hw/input/Paid.csv /user/sw4017/hw/output/`
+
+(Change file path)
 
 
 ### Put output into new csv file
-`1`
+
+`hdfs dfs -getmerge hw/output/ Cleaned2.csv`
 
 ### download file to local computer and convert the cleaned  data into csv format (type command in local computer terminal)
 
-`scp  zw1718@peel.hpc.nyu.edu:/home/zw1718/part-m-00000  <~/Documents/>`(where ever you want to put it in your local computer)
+`scp sw4017@peel.hpc.nyu.edu:/home/sw4017/Cleaned2.csv C:\Users\sirui\Desktop` 
+
+(Change file path)
 
 ### Upload the cleaned data to HDFS
-`hdfs dfs -put Cleaned_data.csv project/input`
+
+`hdfs dfs -put Cleaned2.csv NYCEmployment`
 
 
