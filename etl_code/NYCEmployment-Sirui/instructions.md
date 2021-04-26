@@ -10,11 +10,11 @@
 
 `yarn classpath`
 
-`javac -classpath `yarn classpath` -d . CleanMapper.java`
+``javac -classpath `yarn classpath` -d . CleanMapper.java``
 
-`javac -classpath `yarn classpath` -d . CleanReducer.java`
+``javac -classpath `yarn classpath` -d . CleanReducer.java``
 
-`javac -classpath `yarn classpath`:. -d . Clean.java`
+``javac -classpath `yarn classpath`:. -d . Clean.java``
 
 ### Create Jar file
 
@@ -53,11 +53,11 @@
 
 `yarn classpath`
 
-`javac -classpath `yarn classpath` -d . Clean2Mapper.java`
+``javac -classpath `yarn classpath` -d . Clean2Mapper.java``
 
-`javac -classpath `yarn classpath` -d . CleanReducer.java`
+``javac -classpath `yarn classpath` -d . CleanReducer.java``
 
-`javac -classpath `yarn classpath`:. -d . Clean2.java`
+``javac -classpath `yarn classpath`:. -d . Clean2.java``
 
 ### Create Jar file
 

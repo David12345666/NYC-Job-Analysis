@@ -59,19 +59,19 @@
 `}`
 
 ### Change of median salary of each occupation in each year 
-`var TempSalarySum = 0`
-`for (i <- 0 to 35) {`
-`   val SalaryRDD = SalaryRDD1.filter(line=>line.split(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)")(0).toInt == i)`
-`   for(j <- 2013 to 2018) {`
-`	    val SalaryYearRDD = SalaryRDD.filter(line=>line.split(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)")(2).slice(1, 5).toInt == j)`
-`	    val SalaryList = SalaryYearRDD.map{x => x.split(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)")}.map{x => (x(3).toInt)}`
-`       val SalarySum = SalaryList.collect().sum`
-`       if(TempSalarySum != 0) {`
-`		    println("Occupation " + SalaryRDD.filter(line=>line.split(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)")(2) + " Year " + (j-1) + " to " + j + " Salary change: " + (SalarySum - TempSalarySum))`
-`       }`
-`   TempSalarySum = SalarySum`
-`   }`
-`}`
+<p>var TempSalarySum = 0
+for (i <- 0 to 35) {
+   val SalaryRDD = SalaryRDD1.filter(line=>line.split(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)")(0).toInt == i)
+   for(j <- 2013 to 2018) {`
+	    val SalaryYearRDD = SalaryRDD.filter(line=>line.split(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)")(2).slice(1, 5).toInt == j)
+	    val SalaryList = SalaryYearRDD.map{x => x.split(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)")}.map{x => (x(3).toInt)}
+       val SalarySum = SalaryList.collect().sum
+       if(TempSalarySum != 0) {
+		    println("Occupation " + SalaryRDD.filter(line=>line.split(",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)")(2) + " Year " + (j-1) + " to " + j + " Salary change: " + (SalarySum - TempSalarySum))
+       }
+   TempSalarySum = SalarySum
+   }
+} </p>
 
 
 ### Highest Paid Job Each Year:
