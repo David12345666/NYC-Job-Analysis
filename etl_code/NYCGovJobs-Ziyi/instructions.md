@@ -34,7 +34,7 @@ rename `part-m-00000` as `cleaned_data.csv`
 
 
 ### Upload the cleaned data to HDFS
-`hdfs dfs -put Cleaned_data.csv project/input`
+`hdfs dfs -put Cleaned_data.csv data`
 
 
 

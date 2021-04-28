@@ -9,7 +9,7 @@
 
 ## Load data as a dataframe
 
-`val jobSchema = new StructType().add("jobID", IntegerType, nullable = true).add("agency", StringType, nullable = true).add("numOfPositions", IntegerType, nullable = true).add("civiServiceTitle", StringType, nullable = true).add("titleCodeNum", StringType, nullable = true).add("jobCategory", StringType, nullable = true).add("salaryFrom", DoubleType, nullable = true).add("salaryTo", DoubleType, nullable = true).add("month", StringType, nullable = true).add("year",StringType,nullable = true)`
+`val jobSchema = new StructType().add("jobID", IntegerType, nullable = true).add("agency", StringType, nullable = true).add("numOfPositions", IntegerType, nullable = true).add("civilServiceTitle", StringType, nullable = true).add("titleCodeNum", StringType, nullable = true).add("jobCategory", StringType, nullable = true).add("salaryFrom", DoubleType, nullable = true).add("salaryTo", DoubleType, nullable = true).add("month", StringType, nullable = true).add("year",StringType,nullable = true)`
 
 `val job = spark.read.format("csv") .option("header", "true").schema(jobSchema). load("data/cleaned_data.csv")`
 
@@ -44,9 +44,19 @@
 ### Highest (Job) Paid Each Year:
 `val maxPerYear=job.groupBy("year").max("salaryTo").as("max_salary").sort("year").show(20,false)`
 
-`job.where((col("year")==="2011")&& (col("salaryTo")===65485.0)).show(false)`
- matches( ".*2011.*")
-val JoinedDS=job.join(maxPerYear,"jobCategory")
+`job.where(col("year")===".*2011.*").show(false)`
+
+
+
+## Steps to save the data to local for data visualization (positionsPerCategory as example)
+
+`val pPC = job.groupBy("jobCategory").sum("numOfPositions").as("sum_positions").sort("jobCategory").coalesce(1).write.csv("pPC.csv")`
+
+`hdfs dfs -copyToLocal pPC /home/zw1718`   (on Peel cluster)
+
+`scp zw1718@peel.hpc.nyu.edu:/home/zw1718/pPC/part-00000-5eaa6766-10ee-4581-b748-157259317d60-c000.csv ~/downloads` (on local terminal) 
+
+("part-00000-5eaa6766-10ee-4581-b748-157259317d60-c000" is the file name of the single csv file generated after coalescing partitions)
 
 
 
