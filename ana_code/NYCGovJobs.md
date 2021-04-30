@@ -41,10 +41,9 @@
 
 
 
-### Highest (Job) Paid Each Year:
+### Highest Paid Each Year:
 `val maxPerYear=job.groupBy("year").max("salaryTo").as("max_salary").sort("year").show(20,false)`
 
-`job.where(col("year")===".*2011.*").show(false)`
 
 
 
