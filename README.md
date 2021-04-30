@@ -1,10 +1,5 @@
 # NYC-Job-Analysis
 
-(requirements:
-
-• Describe your directories and files, step by step, how to build your code, how to run your code, where to find results of a run.
-
-• Identify where we can find the input data that you used. Please provide access to the HDFS files to adm209, hmh371 and hmh371 )
 ## Team Members
 Sirui Wang, Ziyi Wang
 
@@ -16,13 +11,25 @@ This project will analyze both the NYC occupations and NYC government job offeri
 
 
 ## Directories
-`ana_code` : the source code for the analytics
+`data_ingest`  : commands for data ingestion
 
-`profiling_code` : data profiling code using MapReduce
+`profiling_code` : data profiling code using MapReduce]
 
 `etl_code` : data cleaning code using MapReduce
 
-`data_ingest`  : commands for data ingestion
+`ana_code` : the source code for the analytics
 
 `screenshots`  : screenshots of running analytics
-### 
+
+`data_src` : the data source and the cleaned data files
+
+## implementation 
+`data_ingest` --> `profiling_code` --> `etl_code` --> `ana_code`
+
+each directory has separate instructions for implementing NYC Government Job analysis and NYC Employment analysis
+
+the source data can be found inside data_src directory:
+
+-NYC Government Job: `NYC_Jobs.csv`
+
+-NYC Employment: `Occupations.csv` & `Paid.csv`
